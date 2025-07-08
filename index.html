@@ -176,12 +176,14 @@
 <section class="form-section" id="form">
   <h2>Start Automating Your Ads Today</h2>
   <p>We're opening limited beta access. Reserve your spot.</p>
-  <form>
-    <input type="text" placeholder="Name" required />
-    <input type="email" placeholder="Email" required />
-    <br/>
-    <button class="join-btn">Join the Waitlist</button>
-  </form>
+
+ <form name="waitlist" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="waitlist" />
+  <input type="text" name="name" placeholder="Name" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <button type="submit">Join the Waitlist</button>
+</form>
+   
 </section>
 
 <footer>
