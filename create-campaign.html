@@ -14,19 +14,6 @@
     .sidebar a:hover { background: #e1ecf9; color: #003e8a; }
     .sidebar a.active { background: #003e8a; color: #fff; }
     .content { flex: 1; padding: 40px; }
-    h1 { color: #003e8a; margin-bottom: 30px; text-align: center; }
-    .kpis { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
-    .kpi-card { background: white; padding: 20px 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; flex: 1 1 150px; }
-    .kpi-card h2 { font-size: 28px; margin: 10px 0; color: #003e8a; }
-    .chart-placeholder { background: white; height: 250px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; display: flex; align-items: center; justify-content: center; color: #888; }
-    table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    th, td { padding: 15px 20px; text-align: left; }
-    th { background: #003e8a; color: white; }
-    tr:nth-child(even) { background: #f1f5f9; }
-    input, select, button { padding: 12px; margin-bottom: 20px; width: 100%; box-sizing: border-box; border-radius: 6px; border: 1px solid #ddd; }
-    button { background: #003e8a; color: white; border: none; cursor: pointer; }
-    button:hover { background: #002e6b; }
-    @media (max-width: 600px) { .kpis { flex-direction: column; } }
   </style>
 </head>
 <body>
@@ -52,7 +39,7 @@
 </div>
 
 <div class="content">
-  <h1>Create Campaign</h1><form><input type='text' placeholder='Campaign Name'><select><option>Select Platform</option><option>Facebook</option><option>Google</option><option>Instagram</option></select><input type='number' placeholder='Budget ($)'><input type='date'><input type='date'><button type='submit'>Launch Campaign</button></form>
+  <h1>Create Campaign</h1><p>Form to create campaign.</p>
 </div>
 </body>
 </html>
