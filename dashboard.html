@@ -63,6 +63,12 @@
     window.location.href = "login.html";
   }
 </script>
+<script>
+  function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.replace("login.html");
+  }
+</script>
 
 </body>
 </html>

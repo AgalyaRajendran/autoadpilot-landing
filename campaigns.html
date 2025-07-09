@@ -128,6 +128,12 @@
     </tbody>
   </table>
 </div>
+<script>
+  function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.replace("login.html");
+  }
+</script>
 
 </body>
 </html>
