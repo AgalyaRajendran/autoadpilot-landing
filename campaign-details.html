@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campaign Details – NexMax</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {font-family: 'Inter', sans-serif; margin: 0; display: flex; min-height: 100vh; background: #f9fafb; color: #1a1a1a;}
+    .sidebar {width: 220px; background: #fff; box-shadow: 2px 0 12px rgba(0,0,0,0.05); padding: 30px 20px;}
+    .sidebar h2 {color: #003e8a; font-size: 24px; margin-bottom: 40px; text-align: center;}
+    .sidebar a {display: block; padding: 12px 16px; margin-bottom: 10px; color: #333; text-decoration: none; border-radius: 6px; transition: background 0.3s, color 0.3s;}
+    .sidebar a:hover {background: #e1ecf9; color: #003e8a;}
+    .sidebar a.active {background: #003e8a; color: #fff;}
+    .content {flex: 1; padding: 40px;}
+    h1 {color: #003e8a; margin-bottom: 20px;}
+    .kpis {display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;}
+    .kpi-card {background: white; padding: 20px 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; flex: 1 1 150px;}
+    .kpi-card h2 {font-size: 24px; margin: 10px 0; color: #003e8a;}
+    .chart-placeholder {background: white; height: 250px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; display: flex; align-items: center; justify-content: center; color: #888;}
+    table {width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);}
+    th, td {padding: 15px 20px; text-align: left;}
+    th {background: #003e8a; color: white;}
+    tr:nth-child(even) {background: #f1f5f9;}
+    @media (max-width: 600px) {.kpis {flex-direction: column;}}
+  </style>
+</head>
+<body>
+<div class="sidebar">
+  <h2>NexMax</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="create-campaign.html">Create Campaign</a>
+  <a href="campaigns.html" class="active">Campaigns</a>
+  <a href="settings.html">Settings</a>
+  <a href="login.html">Logout</a>
+</div>
+<div class="content">
+  <h1>Campaign: Earbuds Launch</h1>
+  <p>Status: <strong style="color:green;">Running</strong></p>
+  <div class="kpis">
+    <div class="kpi-card"><div>Spend</div><h2>$500</h2></div>
+    <div class="kpi-card"><div>Clicks</div><h2>1,200</h2></div>
+    <div class="kpi-card"><div>ROAS</div><h2>3.2x</h2></div>
+    <div class="kpi-card"><div>CTR</div><h2>2.5%</h2></div>
+  </div>
+  <div class="chart-placeholder">[Performance over time chart]</div>
+  <table>
+    <thead><tr><th>Ad Headline</th><th>Description</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Premium Sound. Wireless Freedom.</td><td>Experience the best music quality with our earbuds.</td><td>Active</td></tr>
+      <tr><td>Block Out the World</td><td>Noise-canceling, long battery life. Try now!</td><td>Paused</td></tr>
+      <tr><td>Unleash Your Music</td><td>Grab our earbuds at $79 only this week.</td><td>Active</td></tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
