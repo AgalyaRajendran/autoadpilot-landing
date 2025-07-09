@@ -27,6 +27,11 @@
   </style>
 </head>
 <body>
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
 <div class="sidebar">
   <h2>NexMax</h2>
   <a href="dashboard.html">Dashboard</a>
