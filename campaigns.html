@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,134 +7,39 @@
   <title>Campaigns – NexMax</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      display: flex;
-      min-height: 100vh;
-      background: #f9fafb;
-      color: #1a1a1a;
-    }
-    .sidebar {
-      width: 220px;
-      background: #fff;
-      box-shadow: 2px 0 12px rgba(0,0,0,0.05);
-      padding: 30px 20px;
-    }
-    .sidebar h2 {
-      color: #003e8a;
-      font-size: 24px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-    .sidebar a {
-      display: block;
-      padding: 12px 16px;
-      margin-bottom: 10px;
-      color: #333;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s, color 0.3s;
-    }
-    .sidebar a:hover {
-      background: #e1ecf9;
-      color: #003e8a;
-    }
-    .sidebar a.active {
-      background: #003e8a;
-      color: #fff;
-    }
-    .content {
-      flex: 1;
-      padding: 40px;
-    }
-    h1 {
-      color: #003e8a;
-      margin-bottom: 30px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    th, td {
-      padding: 15px 20px;
-      text-align: left;
-    }
-    th {
-      background: #003e8a;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background: #f1f5f9;
-    }
-    td a {
-      color: #003e8a;
-      text-decoration: none;
-    }
-    td a:hover {
-      text-decoration: underline;
-    }
+    body { font-family: 'Inter', sans-serif; margin: 0; display: flex; min-height: 100vh; background: #f9fafb; color: #1a1a1a; }
+    .sidebar { width: 220px; background: #fff; box-shadow: 2px 0 12px rgba(0,0,0,0.05); padding: 30px 20px; }
+    .sidebar h2 { color: #003e8a; font-size: 24px; margin-bottom: 40px; text-align: center; }
+    .sidebar a { display: block; padding: 12px 16px; margin-bottom: 10px; color: #333; text-decoration: none; border-radius: 6px; transition: background 0.3s, color 0.3s; }
+    .sidebar a:hover { background: #e1ecf9; color: #003e8a; }
+    .sidebar a.active { background: #003e8a; color: #fff; }
+    .content { flex: 1; padding: 40px; }
   </style>
 </head>
 <body>
+
 <script>
   if (localStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "login.html";
   }
-</script>
-
-<div class="sidebar">
-  <h2>NexMax</h2>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="create-campaign.html">Create Campaign</a>
-  <a href="campaigns.html" class="active">Campaigns</a>
-  <a href="settings.html">Settings</a>
-  <a href="login.html">Logout</a>
-</div>
-
-<div class="content">
-  <h1>Your Campaigns</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Campaign</th>
-        <th>Platform</th>
-        <th>Budget</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="campaign-details.html">Earbuds Launch</a></td>
-        <td>Facebook</td>
-        <td>$500</td>
-        <td>Running</td>
-      </tr>
-      <tr>
-        <td><a href="campaign-details.html">Winter Promo</a></td>
-        <td>Google</td>
-        <td>$300</td>
-        <td>Paused</td>
-      </tr>
-      <tr>
-        <td><a href="campaign-details.html">Black Friday</a></td>
-        <td>Instagram</td>
-        <td>$450</td>
-        <td>Completed</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<script>
   function logout() {
     localStorage.removeItem("isLoggedIn");
     window.location.replace("login.html");
   }
 </script>
 
+
+<div class="sidebar">
+  <h2>NexMax</h2>
+  <a href="dashboard.html" class="active">Dashboard</a>
+  <a href="create-campaign.html">Create Campaign</a>
+  <a href="campaigns.html">Campaigns</a>
+  <a href="settings.html">Settings</a>
+  <a href="#" onclick="logout()">Logout</a>
+</div>
+
+<div class="content">
+  <h1>Campaigns</h1><p>List of campaigns here.</p>
+</div>
 </body>
 </html>
