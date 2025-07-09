@@ -79,6 +79,24 @@
     Don’t have an account? <a href="#">Sign up</a>
   </div>
 </div>
+<script>
+  function login(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Dummy test user
+    const demoEmail = "admin@nexmax.com";
+    const demoPassword = "password123";
+
+    if (email === demoEmail && password === demoPassword) {
+      // Simulated successful login
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Invalid email or password. Try admin@nexmax.com / password123");
+    }
+  }
+</script>
 
 </body>
 </html>
