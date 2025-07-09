@@ -27,14 +27,16 @@
   </style>
 </head>
 <body>
+
 <div class="sidebar">
   <h2>NexMax</h2>
   <a href="dashboard.html" class="active">Dashboard</a>
   <a href="create-campaign.html">Create Campaign</a>
   <a href="campaigns.html">Campaigns</a>
   <a href="settings.html">Settings</a>
-  <a href="login.html" onclick="localStorage.removeItem('isLoggedIn')">Logout</a>
+  <a href="#" onclick="logout()">Logout</a>
 </div>
+
 <div class="content">
   <h1>NexMax Dashboard</h1>
   <div class="kpis">
@@ -50,5 +52,13 @@
            <tr><td>Black Friday</td><td>Instagram</td><td>$450</td><td>Completed</td></tr></tbody>
   </table>
 </div>
+
+<script>
+  function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+  }
+</script>
+
 </body>
 </html>
