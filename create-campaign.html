@@ -41,14 +41,19 @@
 
   <div class="card step active" id="step1">
     <h3>Step 1: Campaign Metadata</h3>
+
     <input type="text" placeholder="Campaign Name">
-    <input type="date" placeholder="Start Date">
-    <input type="date" placeholder="End Date">
+
+   <label>Start Date</label>
+      <input type="date">
+   <label>End Date</label>
+      <input type="date">
     <select>
-      <option>Campaign Objective</option>
-      <option>Awareness</option>
-      <option>Sales</option>
-      <option>Conversions</option>
+
+      <option value =""disabled selected>Campaign Objective</option>
+      <option value = "awareness">Awareness</option>
+      <option value = "sales">Sales</option>
+      <option value = "conversions">Conversions</option>
     </select>
     <textarea placeholder="Campaign Description"></textarea>
     <select>
