@@ -15,7 +15,13 @@
     .content { flex: 1; padding: 40px; }
     h1 { color: #003e8a; margin-bottom: 30px; text-align: center; }
     .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px; }
-    input, select, textarea, button { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ddd; }
+    input, select, textarea, button { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ddd;box-sizing: border-box;}
+  select {
+    appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='black' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background-color: white;
+    background-size: 12px;
+  }
     button { background: #003e8a; color: white; border: none; cursor: pointer; }
     button:hover { background: #002e6b; }
     .step { display: none; }
