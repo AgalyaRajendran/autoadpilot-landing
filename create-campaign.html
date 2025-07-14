@@ -127,13 +127,31 @@
 
   <div class="card step" id="step3">
     <h3>Step 3: Optimization & Preview</h3>
-    <label><input type="radio" name="optimize"> NexMax Infinite</label><br>
-    <label><input type="radio" name="optimize"> Sales</label><br>
-    <label><input type="radio" name="optimize"> Conversions</label><br><br>
-    <input type="number" placeholder="Target ROAS">
-    <label><input type="checkbox"> Integrate Demand Forecast</label><br>
-    <label><input type="checkbox"> Integrate External APIs</label><br>
-    <label><input type="checkbox"> Enable Real-Time Data Feeds</label><br><br>
+    <select>
+      <option value ="" disabled selected>Optimize Towards</option>
+      <option>NexMax Infinite</option>
+      <option>Sales</option>
+      <option>Conversions</option>
+    </select>
+    <input type="number" min ="0" placeholder="Target ROAS">
+    <select>
+      <option value ="" disabled selected>Integrated Data Demand Forecast</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+    <select>
+      <option value ="" disabled selected>APIs</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+    <select>
+      <option value ="" disabled selected>Real Time Data Feeds</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
     <button onclick="prevStep(2)">⬅ Previous</button>
     <button onclick="previewCampaign()">Preview Campaign</button>
   </div>
