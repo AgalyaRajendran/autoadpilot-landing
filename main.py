@@ -16,7 +16,7 @@ app.add_middleware(
 @app.get("/api/forecast")
 async def get_forecast():
     return JSONResponse(content={
-        "total_demand": 4200,
+        "total_demand": 4400,
         "total_utilization": 3900,
         "predicted_spend": 1250,
         "roi": 3.5,
@@ -31,6 +31,21 @@ async def get_campaigns():
             {"time": "4:00 PM", "region": "NYC", "bid": "$0.80", "action": "Paused - full occupancy"}
         ]
     })
+@app.post("/api/optimize")
+async def optimize():
+    # Simulate running your reinforcement learning & optimization engine
+    return {
+        "status": "Optimization executed",
+        "adjustments": [
+            {"time": "5:00 PM", "region": "LA", "bid": "$1.10", "action": "Increased"},
+            {"time": "5:00 PM", "region": "Boston", "bid": "$0.90", "action": "Paused - low demand"}
+        ]
+    }
+
+@app.post("/api/forecast-train")
+async def train_forecast():
+    # Simulate retraining your forecasting models (Prophet, LSTM, etc.)
+    return {"status": "Forecast model retrained successfully"}
 
 @app.post("/api/login")
 async def login(email: str = Form(...), password: str = Form(...)):
