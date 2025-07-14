@@ -21,6 +21,7 @@
     .step { display: none; }
     .step.active { display: block; }
     .radio-group {display: flex; gap: 20px;margin-bottom: 20px;}
+    .date-row {display: flex;gap: 20px;margin-bottom: 20px;}
   </style>
 </head>
 <body>
@@ -44,13 +45,16 @@
     <h3>Step 1: Campaign Metadata</h3>
 
     <input type="text" placeholder="Campaign Name">
-
-   <label>Start Date</label>
-      <input type="date">
-   <label>End Date</label>
-      <input type="date">
-    <select>
-
+    <div class="date-row">
+    <div style="flex:1; margin-right:10px;">
+    <label>Start Date</label>
+    <input type="date">
+    </div>
+    <div style="flex:1;">
+    <label>End Date</label>
+    <input type="date">
+    </div>
+</div>
       <option value ="" disabled selected>Campaign Objective</option>
       <option value = "awareness">Awareness</option>
       <option value = "sales">Sales</option>
