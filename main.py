@@ -4,9 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from db import init_db, save_campaign
 
-app = FastAPI()
-
 init_db()
+
+app = FastAPI()
 
 # Allow your frontend site
 app.add_middleware(
