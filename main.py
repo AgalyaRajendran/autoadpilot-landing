@@ -1,5 +1,5 @@
 
-from fastapi import FastAPI, Form, HTTPException
+from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
@@ -53,3 +53,10 @@ async def login(email: str = Form(...), password: str = Form(...)):
         return {"message": "Login successful"}
     else:
         raise HTTPException(status_code=401, detail="Invalid credentials")
+
+@app.post("/api/create-campaign")
+async def create_campaign(request: Request):
+    data = await request.json()
+    print("🚀 Received new campaign setup:")
+    print(data)
+    return JSONResponse(content={"message": "Campaign created successfully!"})
