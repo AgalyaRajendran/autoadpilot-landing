@@ -165,8 +165,49 @@ function nextStep(step) {
 function prevStep(step) {
   nextStep(step);
 }
+
 function previewCampaign() {
-  alert("✅ Campaign setup complete.\nThis would show a detailed summary with predicted uplift, ROI, budget allocation etc.");
+  // Step 1
+  const campaignName = document.querySelector('#step1 input[type="text"]').value;
+  const startDate = document.querySelector('#step1 input[type="date"]').value;
+  const endDate = document.querySelectorAll('#step1 input[type="date"]')[1].value;
+  const objective = document.querySelectorAll('#step1 select')[0].value;
+  const description = document.querySelector('#step1 textarea').value;
+  const campaignType = document.querySelectorAll('#step1 select')[1].value;
+  const merchantLink = document.querySelector('#step1 input[type="url"]').value;
+
+  // Step 2
+  const network = document.querySelector('input[name="network"]:checked')?.nextSibling.textContent.trim();
+  const zipcode = document.querySelector('#step2 input[placeholder="Zipcode"]').value;
+  const location = document.querySelector('#step2 input[placeholder*="Location"]').value;
+  const languages = document.querySelectorAll('#step2 select')[0].value;
+  const presetAdGroup = document.querySelectorAll('#step2 select')[1].value;
+  const productGroup = document.querySelectorAll('#step2 select')[2].value;
+  const keywordGroup = document.querySelectorAll('#step2 select')[3].value;
+  const maxBudget = document.querySelector('#step2 input[type="number"]').value;
+
+  // Step 3
+  const optimizeTowards = document.querySelector('#step3 select').value;
+  const targetROAS = document.querySelector('#step3 input[type="number"]').value;
+  const forecast = document.querySelectorAll('#step3 select')[1].value;
+  const apis = document.querySelectorAll('#step3 select')[2].value;
+  const realTimeDataFeeds = document.querySelectorAll('#step3 select')[3].value;
+
+  const campaignData = {
+    campaignName, startDate, endDate, objective, description, campaignType, merchantLink,
+    network, zipcode, location, languages, presetAdGroup, productGroup, keywordGroup, maxBudget,
+    optimizeTowards, targetROAS, forecast, apis, realTimeDataFeeds
+  };
+
+  // POST to backend
+  fetch("http://localhost:8000/api/create-campaign", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(campaignData)
+  })
+  .then(res => res.json())
+  .then(data => alert("✅ " + data.message))
+  .catch(err => alert("Error creating campaign"));
 }
 </script>
 
