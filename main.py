@@ -2,8 +2,11 @@
 from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from db import init_db, save_campaign
 
 app = FastAPI()
+
+init_db()
 
 # Allow your frontend site
 app.add_middleware(
@@ -57,6 +60,5 @@ async def login(email: str = Form(...), password: str = Form(...)):
 @app.post("/api/create-campaign")
 async def create_campaign(request: Request):
     data = await request.json()
-    print("🚀 Received new campaign setup:")
-    print(data)
-    return JSONResponse(content={"message": "Campaign created successfully!"})
+    save_campaign(data)
+    return {"message": "Campaign saved to database successfully!"}
