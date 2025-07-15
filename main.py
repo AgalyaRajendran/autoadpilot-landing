@@ -60,5 +60,7 @@ async def login(email: str = Form(...), password: str = Form(...)):
 @app.post("/api/create-campaign")
 async def create_campaign(request: Request):
     data = await request.json()
+    print("Received campaign data")
+    print(json.dumps(data, indent=4))
     save_campaign(data)
     return {"message": "Campaign saved to database successfully!"}
