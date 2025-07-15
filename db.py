@@ -56,9 +56,9 @@ def save_campaign(data):
         data.get("presetAdGroup"),
         data.get("productGroup"),
         data.get("keywordGroup"),
-        float(data.get("maxBudget", 0)),
+        float(data.get("maxBudget" or 0)),
         data.get("optimizeTowards"),
-        float(data.get("targetROAS", 0)),
+        float(data.get("targetROAS" or 0)),
         data.get("forecast"),
         data.get("apis"),
         data.get("realTimeDataFeeds")
