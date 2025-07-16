@@ -71,3 +71,15 @@ def save_campaign(data):
     ))
     conn.commit()
     conn.close()
+
+def campaign_exists(name, startDate, endDate):
+    import sqlite3
+    conn = sqlite3.connect("nexmax.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT COUNT(*) FROM campaigns
+        WHERE campaignName = ? AND startDate = ? AND endDate = ?
+    """, (name, startDate, endDate))
+    count = cursor.fetchone()[0]
+    conn.close()
+    return count > 0
