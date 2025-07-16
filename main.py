@@ -2,7 +2,7 @@
 from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from db import init_db, save_campaign
+from db import init_db, save_campaign, campaign_exists
 import json
 
 app = FastAPI()
@@ -61,7 +61,14 @@ async def login(email: str = Form(...), password: str = Form(...)):
 @app.post("/api/create-campaign")
 async def create_campaign(request: Request):
     data = await request.json()
-    print("Received campaign data")
+    print("🚀 Received campaign data:")
     print(json.dumps(data, indent=4))
+    
+    if campaign_exists(data.get("campaignName"), data.get("startDate"), data.get("endDate")):
+        return JSONResponse(
+            content={"message": "⚠️ Campaign with same name and dates already exists."},
+            status_code=200
+        )
+    
     save_campaign(data)
-    return {"message": "Campaign saved to database successfully!"}
+    return JSONResponse(content={"message": "✅ Campaign saved to database successfully!"})

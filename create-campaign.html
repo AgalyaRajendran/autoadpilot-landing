@@ -167,6 +167,11 @@ function prevStep(step) {
 }
 
 function previewCampaign() {
+
+  const button = document.querySelector('#step3 button[onclick="previewCampaign()"]');
+  button.disabled = true;
+  button.textContent = "Saving...";
+
   // Step 1
   const campaignName = document.querySelector('#step1 input[type="text"]').value;
   const startDate = document.querySelector('#step1 input[type="date"]').value;
@@ -206,8 +211,16 @@ function previewCampaign() {
     body: JSON.stringify(campaignData)
   })
   .then(res => res.json())
-  .then(data => alert("✅ " + data.message))
-  .catch(err => alert("Error creating campaign"));
+  .then(data => {
+    alert(data.message);
+    button.disabled = false;
+    button.textContent = "Preview Campaign";
+  })
+  .catch(err => {
+    alert("❌ Error creating campaign");
+    button.disabled = false;
+    button.textContent = "Preview Campaign";
+  });
 }
 </script>
 
