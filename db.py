@@ -1,8 +1,11 @@
 
 import sqlite3
+import os
 
 def init_db():
-    conn = sqlite3.connect("nexmax.db")
+    db_path = os.path.abspath("nexmax.db")
+    print(f"🔍 Using database file at: {db_path}")
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS campaigns (
@@ -31,9 +34,12 @@ def init_db():
     """)
     conn.commit()
     conn.close()
+    print("✅ campaigns table is ready.")
 
 def save_campaign(data):
-    conn = sqlite3.connect("nexmax.db")
+    db_path = os.path.abspath("nexmax.db")
+    print(f"⚡ Inserting into database at: {db_path}")
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute("""
         INSERT INTO campaigns (
@@ -56,9 +62,9 @@ def save_campaign(data):
         data.get("presetAdGroup"),
         data.get("productGroup"),
         data.get("keywordGroup"),
-        float(data.get("maxBudget" or 0)),
+        float(data.get("maxBudget") or 0),
         data.get("optimizeTowards"),
-        float(data.get("targetROAS" or 0)),
+        float(data.get("targetROAS") or 0),
         data.get("forecast"),
         data.get("apis"),
         data.get("realTimeDataFeeds")
