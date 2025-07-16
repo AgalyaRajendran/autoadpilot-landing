@@ -3,6 +3,7 @@ from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from db import init_db, save_campaign
+import json
 
 app = FastAPI()
 
